@@ -1,0 +1,201 @@
+Keywords
+
+
+
+			1.	Access Specifiers/Modifiers :  Public Private Default Protected.
+
+
+
+							* Public :  That Function or variable is available to entire project
+
+							
+
+							* Default : That Function or variable is available to only inside a package
+
+
+
+							* Private : That Function or variable is available to only inside that class
+
+
+
+							* Protected : That Function or variable is available to child /// Not Used
+
+  
+
+            Interview
+
+			
+
+         2. Static final try catch finally. (Exception Handling)
+
+							
+
+							* Static : When you mark a variable or function as static it is shared by all objects
+
+											Another way of saying this is it belongs to Class rather that individual objects
+
+                                 So you can directly access static variable by class name eg Employee.getBonus();
+
+
+
+							*  final : When you mark a variable as final you HAVE TO assign a value to it immediately
+
+												and that value can never be changed
+
+
+
+							* Static final :    These two guys are Java Constant
+
+
+
+
+
+
+
+
+
+
+
+
+
+			3. Abstract implements(Interface) extends	(Inheritance)
+
+
+
+							*Implements (Interface) :   Basically blueprint of a class
+
+													When you implement and interface its a must for the class to implement all
+
+												functions mentioned in that interface
+
+
+
+							*Extends (Inheritance) : Every function and variable in parent class will be available in child c															 class
+
+							*ABstract : If you mark a class as abstract you cannot create its object/instance anymore
+
+											The only purpose of this class is that someone will extend it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         4. Overloading and Overriding
+
+
+
+
+
+						* Overloading.      Overloaded functions. ( In the same class)
+
+												deposit(acctNum,amount);     Bank Manager…yes
+
+												deposit(username,password,acctNum,amount);   Customer …..yes
+
+											   deposit(pin,card#,acctNum,amount);   ATM …..yes
+
+
+
+						* Overriding.   Child class can can rewrite the logic that was defined in a parent class function
+
+
+
+	
+
+				Website. ====>html pages. (Controller)
+
+
+
+       Web Services. ====>Data.       (RestController) 
+
+
+
+								WEB.  ======>. Internet
+
+
+
+								Service. ===>  Function
+
+
+
+
+
+										@RestController.  (CRUD)
+
+												* GETMapping
+
+												* POSTMapping ===>INSERT. In their DB
+
+												* PUT.    =>.   UPDATE
+
+												* DELETE	 ====>
+
+
+
+
+
+
+
+							RestFul WEbservice   ( Old days :  SOAP web service)
+
+
+
+
+
+		AWS  EC2 (Laptop or computer which is online) And S3 (c:/ d:/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+	@GetMapping("/employee")
+
+	public  Employee  getEmployee(@PathParam("id")int id)
+
+	{
+
+		//get list from DB   select * from employee where id = id
+
+		
+
+		Employee e1= new Employee(); e1.id=55; e1.managerName="Pavani";
+
+		Employee e2= new Employee(); e2.id=56; e2.managerName="Sindhu";
+
+		ArrayList<Employee> list = new ArrayList<Employee>();
+
+		list.add(e1); list.add(e2);
+
+		
+
+		
+
+		
+
+		
+
+		
+
+		return list.stream().filter(e -> e.id==id).findFirst().orElse(null);
+
+		
+
+	}
